@@ -1,0 +1,306 @@
+
+/* ----- var ----- */
+:root {
+  --main-color: rgb(11, 86, 226);
+  --maindark-color: rgb(10, 56, 141);
+  --lightgray-color: #bbbbbb;
+  --gray-color: #606060;
+  --darkgray-color: #303030;
+  --primary-color: var(--main-color);
+  --secondory-color: #bbbbbb;
+  --danger-color: #c00000;
+}
+
+/* ======================================== */
+/* initialize コピペして変える */
+/* ======================================== */
+body {
+  font-size: 1.6rem;
+  line-height: 1;
+  scroll-behavior: smooth;
+}
+li {
+  font-size: 1.6rem;
+}
+p {
+  line-height: 1.7;
+}
+/* a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+} */
+
+/* ----- tools ----- */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.sp-br {
+  display: none;
+}
+@media(max-width:480px) {
+  .sp-br {
+    display: none;
+  }
+}
+/* text-align */
+.tac {
+  text-align: center;
+}
+.tar {
+  text-align: right;
+}
+.tal {
+  text-align: left;
+}
+/* pict-frame */
+.pict-frame {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----- ページ全体の設定 ----- */
+.container {
+  max-width: 960px;
+  min-width: 680px;
+  margin: auto;
+}
+/* main */
+.main {
+  margin-top: 24px;
+  padding: 0 24px;
+}
+.main h1 {
+  margin-top: 4px;
+  margin-left: 4px;
+  padding: 8px;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  border-left: solid 8px var(--main-color);
+}
+
+/* common-message */
+.link {
+  margin-top: 16px;
+  margin-left: 8px;
+}
+.sort-link {
+  margin-top: 16px;
+  margin-left: 8px;
+  text-align: right;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+.confirm-text {
+  margin: 16px 16px 0; 
+}
+/* common-nav */
+.common-nav {
+  margin: 16px;
+  line-height: 1.7;
+}
+
+/* ----- button ----- */
+.btn {
+  display: inline-block;
+  min-width: 100px;
+  padding: 0 8px;
+  border: solid 1px var(--lightgray-color);
+  border-radius: 4px;
+  background-color: white;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+}
+.btn-round {
+  border-radius: 1.3rem;
+}
+.btn-primary {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn-primary-sub {
+  border-color: var(--primary-color);
+  background-color: rgb(224, 143, 118);
+  color: black;
+}
+.btn-primary:hover,
+.btn-primary-sub:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+.btn-secondory {
+  border-color: var(--secondory-color);
+  background-color: var(--secondory-color);
+  color: black;
+}
+.btn-secondory:hover {
+  background-color: white;
+}
+.btns {
+  margin: 16px 16px 0;
+}
+.btns .btn {
+  margin-right: 16px;
+}
+
+/* ----- pager ----- */
+.pager {
+  margin: 16px 16px 0;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+.pager a, .pager span {
+  display: inline-block;
+  width: 2.4rem;
+  border: solid 1px var(--lightgray-color);
+  border-radius: 2px;
+  line-height: 2.6rem;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+.pager a:hover {
+  box-shadow: inset 0 0 2px var(--gray-color);
+}
+.pager span {
+  background-color: var(--lightgray-color);
+  cursor: auto;
+}
+
+/* ----------------------------------------
+  header footer
+---------------------------------------- */
+
+/* .header
+/*   .row-first
+/*     .staffname
+/*     .header-nav
+/*   .row-second
+/*     .global-nav
+---------------------------------------- */
+
+.header {
+  background-color: var(--lightgray-color);
+}
+/* .row-first */
+.header .row-first {
+  display: flex;
+  justify-content: space-between;
+}
+.header .row-first .h1 a{
+  display: inline-block;
+  margin-left: 32px;
+  font-size: 2.6rem;
+  color: black;
+  line-height: 60px;
+}
+.header .row-first .staffname {
+  font-size: 1.6rem;
+  line-height: 60px;
+}
+.header .row-first .header-list {
+  display: flex;
+}
+.header .row-first .header-list li {
+  line-height: 60px;
+  padding-left: 16px;
+}
+.header .row-first .btn-login,
+.header .row-first .btn-logout {
+  display: block;
+  width: 100px;
+  height: 100%;
+  background-color: var(--gray-color);
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+.header .row-first .btn-login:active,
+.header .row-first .btn-logout:active {
+  box-shadow: inset 0 0 3px #000;
+}
+.header .row-first .btn-login:hover,
+.header .row-first .btn-logout:hover {
+  opacity: 0.7;
+}
+/* .row-second */
+.header .row-second {
+  width: 100%;
+}
+.global-nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: solid 1px #000;
+}
+.global-nav ul li {
+  width: 25%;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 30px;
+}
+.global-nav ul li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: #d0d0d0;
+  text-decoration: none;
+  color: #000;
+}
+.global-nav ul li a:hover {
+  opacity: 0.7;
+}
+.global-nav ul li + li {
+  border-left: solid 1px var(--darkgray-color);
+}
+
+/* .footer
+/*   .footer-link
+/*   .footer-credit
+---------------------------------------- */
+
+.footer {
+  background-color: var(--lightgray-color);
+  margin-top: 24px;
+}
+.footer-link ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: solid 1px #000;
+}
+.footer-link ul li {
+  width: 25%;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 30px;
+}
+.footer-link ul li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: #d0d0d0;
+  text-decoration: none;
+  color: #000;
+}
+.footer-link ul li a:hover {
+  opacity: 0.7;
+}
+.footer-link ul li + li {
+  border-left: solid 1px var(--darkgray-color);
+}
+.footer-credit {
+  margin-top: 32px;;
+  padding-left: 32px; 
+  line-height: 32px;
+}

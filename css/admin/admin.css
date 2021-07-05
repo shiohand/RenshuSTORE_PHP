@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.form {
+  margin-top: 16px;
+}
+
+/* 注文
+---------------------------------------- */
+
+/* nav */
+.order-container .order-nav ul {
+  display: flex;
+  justify-content: space-between;
+  outline: solid 1px var(--gray-color);
+  margin-bottom: 24px;
+}
+.order-container .order-nav ul li {
+  flex: 1;
+  text-align: center;
+  line-height: 2.6rem;
+}
+.order-container .order-nav ul li + li {
+  border-left: 1px solid transparent;
+}
+.order-container .order-nav ul li a {
+  display: block;
+  height:100%;
+  width:100%;
+  background-color: #d0d0d0;
+  text-decoration: none;
+  color: #000;
+  line-height: 2.6rem;
+}
+
+/* 絞り込み */
+.filter {
+  margin-top: 8px;
+}
+.filter p {
+  line-height: 2.3;
+}
+
+.order-container .sort-link {
+  font-size: 1.6rem;
+  text-align: left;
+}
+.order-container .delimiter {
+  margin: 0 12px 0 6px;
+  border: 1px solid var(--lightgray-color);
+  border-top: none;
+  border-bottom: none;
+}
+.order-container .sales-data-total {
+  margin-top: 8px;
+  font-size: 1.8rem;
+}

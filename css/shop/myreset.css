@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+/* ======================================== */
+/* reset */
+/* ======================================== */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+b, i, small, strong, sub, sup, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, thead, tbody, tfoot, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+header, footer, hgroup, menu, nav, section, summary,
+time, mark, audio, video, 
+button, input, optgroup, select, textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+/* ----------------------------------------
+  font
+---------------------------------------- */
+* {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+html {
+  font-size: 62.5%; /* ブラウザのデフォルトが16pxのときの10px */
+  -webkit-text-size-adjust: 100%; /* 文字サイズの自動調整 */
+  -webkit-tap-highlight-color: transparent; /* タップ時ハイライト */
+  overflow-y: scroll;
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Helvetica Neue",
+    Arial,
+    Meiryo,
+    sans-serif;
+}
+/* ----------------------------------------
+  レイアウト box-sizing
+---------------------------------------- */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+summary {
+  display: list-item;
+}
+/* ----------------------------------------
+  各要素
+---------------------------------------- */
+ul, ol {
+  list-style: none;
+  font-size: 0;
+}
+img {
+  border-style: none;
+}
+pre, code {
+  font-family: monospace, monospace;
+  white-space: pre-wrap;
+}
+small {
+  font-size: 80%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+tr, th, td {
+  vertical-align: middle;
+}
+hr {
+  height: 0;
+  overflow: visible;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+:focus:not(:focus-visible) { /* ブラウザの設定に従う */
+  outline: none;
+}
+/* ----------------------------------------
+  Form
+---------------------------------------- */
+button,
+input,
+optgroup,
+select,
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  color: inherit;
+  border: 0;
+  border-radius: 0;
+  text-align: inherit;
+}
+button {
+  cursor: pointer;
+}
+/* chromeの入力済み項目の背景色 */
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s !important;
+}

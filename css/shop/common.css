@@ -1,0 +1,409 @@
+@charset "UTF-8";
+
+/* ----- var ----- */
+:root {
+  --main-color: rgb(226, 61, 11);
+  --maindark-color: rgb(141, 40, 10);
+  --lightgray-color: #bbbbbb;
+  --gray-color: #606060;
+  --primary-color: var(--main-color);
+  --secondory-color: #bbbbbb;
+  --danger-color: #c00000;
+}
+
+/* ======================================== */
+/* initialize コピペして変える */
+/* ======================================== */
+body {
+  font-size: 1.6rem;
+  line-height: 1;
+  scroll-behavior: smooth;
+}
+li {
+  font-size: 1.6rem;
+}
+p {
+  line-height: 1.7;
+}
+a {
+  /* text-decoration: none; */
+  color: var(--main-color)
+  /* cursor: pointer; */
+}
+
+/* ----- tools ----- */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.sp-br {
+  display: none;
+}
+@media(max-width:480px) {
+  .sp-br {
+    display: none;
+  }
+}
+/* text-align */
+.tac {
+  text-align: center;
+}
+.tar {
+  text-align: right;
+}
+.tal {
+  text-align: left;
+}
+/* 横スクロール用設定 スマホでも表示 */
+.scroll {
+  overflow-x: scroll;
+}
+.scroll::-webkit-scrollbar {
+  height: 10px;
+}
+.scroll::-webkit-scrollbar-track {
+  background: #dddddd;
+}
+.scroll::-webkit-scrollbar-thumb {
+  background: var(--lightgray-color);
+}
+/* pict-frame */
+.pict-frame {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  /* 次からは各要素にその都度設定するほうがよいと思う */
+  height: 150px;
+  width: 150px;
+}
+
+/* ----- ページ全体の設定 ----- */
+.container {
+  max-width: 960px;
+  min-width: 320px;
+  margin: auto;
+}
+/* main */
+.main {
+  margin-top: 24px;
+  padding: 0 24px;
+}
+.main h1 {
+  margin-top: 4px;
+  margin-left: 4px;
+  padding: 8px;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  border-left: solid 8px var(--main-color);
+}
+.main .h2 {
+  display: inline-block;
+  margin-top: 16px;
+  margin-left: 8px;
+  padding: 4px 16px;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  border: solid 1px var(--lightgray-color);
+  border-left: none;
+  border-right: none;
+}
+
+/* common-message */
+.link {
+  margin-top: 16px;
+  margin-left: 8px;
+}
+.sort-link {
+  margin-top: 16px;
+  margin-left: 8px;
+  text-align: right;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+.confirm-text {
+  margin: 16px 16px 0; 
+}
+/* back-nav */
+.back-nav {
+  margin: 16px;
+  line-height: 1.7;
+}
+
+/* ----- button ----- */
+.btn {
+  display: inline-block;
+  min-width: 100px;
+  padding: 0 8px;
+  border: solid 1px var(--lightgray-color);
+  border-radius: 4px;
+  background-color: white;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+}
+.btn-round {
+  border-radius: 1.3rem;
+}
+.btn-primary {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn-primary-sub {
+  border-color: var(--primary-color);
+  background-color: rgb(224, 143, 118);
+  color: black;
+}
+.btn-primary:hover,
+.btn-primary-sub:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+.btn-secondory {
+  border-color: var(--secondory-color);
+  background-color: var(--secondory-color);
+  color: black;
+}
+.btn-secondory:hover {
+  background-color: white;
+}
+.btns {
+  margin: 16px 16px 0;
+}
+.btns .btn {
+  margin-right: 16px;
+}
+
+/* ----- pager ----- */
+.pager {
+  margin: 16px 16px 0;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+.pager a, .pager span {
+  display: inline-block;
+  width: 2.4rem;
+  border: solid 1px var(--lightgray-color);
+  border-radius: 2px;
+  line-height: 2.6rem;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+.pager a:hover {
+  box-shadow: inset 0 0 2px var(--gray-color);
+}
+.pager span {
+  background-color: var(--lightgray-color);
+  cursor: auto;
+}
+
+@media(max-width:480px) {
+  .pager {
+    text-align: center;
+  }
+}
+
+/* ----------------------------------------
+  header footer
+---------------------------------------- */
+
+/* .header
+/*   .header-logo
+/*   .header-username
+/*   .header-nav
+/*     .hamburger
+---------------------------------------- */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 60px;
+  padding: 0 24px;
+  background-image: repeating-linear-gradient(rgb(226, 61, 11, 0.2), rgba(226, 61, 11, 0.2) 10px, transparent 10px, transparent 12px);
+}
+.header-logo {
+  min-width: 200px;
+}
+.header-logo a,
+.footer-logo a {
+  display: inline-block;
+  line-height: 60px;
+}
+.header-username {
+  flex-grow: 1; /* 伸びる */
+  padding: 4px 16px;
+  text-align: end;
+  max-height: 60px;
+}
+.header-nav {
+  flex-shrink: 0; /* 縮まない */
+}
+.header-nav ul {
+  padding: 0 16px;
+  border: solid 1px var(--main-color);
+  background-color: var(--main-color);
+}
+.header-nav li {
+  display: inline-block;
+  text-align: center;
+}
+.header-nav li a{
+  display: block;
+  width: 80px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  font-size: 1.6rem;
+}
+.header-nav a:hover {
+  background-color: white;
+  color: var(--main-color);
+  text-decoration: none;
+}
+@media(max-width:480px) {
+  .header-username {
+    display: none;
+  }
+}
+/* ハンバーガーメニュー */
+.header-nav .hamburger {
+  display: none;
+  position: relative;
+}
+/* ボタン */
+.hambuger-btn {
+  display: inline-block;
+  position: relative;
+  width: 56px;
+  height: 56px;
+  padding: 14px;
+  cursor: pointer;
+  text-align: center;
+  /* hambuger-menuが開いたあとも上に残す */
+  z-index: 2;
+}
+.hambuger-btn span {
+  display: inline-block;
+  position: absolute;
+  left: 25%;
+  width: 50%;
+  height: 4px;
+  background-color: var(--main-color);
+}
+.hambuger-btn span:nth-child(1) {
+  top: 14px;
+}
+.hambuger-btn span:nth-child(2) {
+  top: 24px;
+}
+.hambuger-btn span:nth-child(3) {
+  top: 34px;
+}
+/* メニュー */
+.header-nav .hambuger-menu {
+  display: none;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 58px;
+  overflow: hidden;
+}
+.header-nav .hambuger-menu ul li {
+  display: block;
+}
+.header-nav .hambuger-menu {
+  width: 150px;
+}
+.header-nav .hambuger-menu ul {
+  padding: 64px 16px 8px;
+  height: auto;
+}
+.header-nav .hambuger-menu li + li{
+  border-top: solid 1px var(--main-color);
+}
+.header-nav .hambuger-menu li a{
+  width: 100%;
+  color: var(--main-color);
+  font-size: 1.6rem;
+}
+@media(max-width:860px) {
+  .header-nav ul {
+    border-radius: 8px;
+    padding: 0;
+    height: 56px;
+    background-color: white;
+  }
+  .header-nav ul li {
+    display: none;
+  }
+  .header-nav .hamburger {
+    display: block;
+  }
+}
+
+/* .footer
+/*   .footer-link
+/*   .footer-credit
+---------------------------------------- */
+.footer {
+  height: 132px;
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px 24px;
+  background-image: repeating-linear-gradient(rgb(226, 61, 11, 0.2), rgba(226, 61, 11, 0.2) 10px, transparent 10px, transparent 12px);
+}
+.footer-link {
+  width: 100%;
+}
+.footer-credit {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 16px;
+}
+.footer-logo {
+  transform: scale(0.8);
+}
+@media(max-width:480px) {
+  .footer {
+    text-align: center;
+  }
+  .footer-credit {
+    display: block;
+  }
+  .footer-copyright {
+    margin-top: 16px;
+  }
+}
+
+/* ----------------------------------------
+  メディアクエリ(全体)
+---------------------------------------- */
+/* 
+メディアクエリ
+480 スマホ、1要素
+600 スマホ大、タブレット小
+ */
+
+@media(max-width:480px) {
+  .main {
+    margin-top: 12px;
+    padding: 0 12px;
+  }
+}
+@media(max-width:400px) {
+  .main {
+    padding: 0;
+  }
+}

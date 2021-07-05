@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+/* ----- form ----- */
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+textarea {
+  border: solid 1px var(--lightgray-color);
+  border-radius: 4px;
+  font-size: 1.4rem;
+  padding: 4px;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 2px var(--main-color);
+}
+input[type="text"]:disabled,
+input[type="email"]:disabled,
+input[type="number"]:disabled,
+input[type="password"]:disabled,
+textarea:disabled {
+  background-color: #e0e0e0;
+  color: var(--gray-color)
+}
+textarea {
+  resize: none;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+}
+input[name="postal1"] {
+  width: 3em;
+  margin-right: 4px;
+}
+input[name="postal2"] {
+  width: 4em;
+  margin-left: 4px;
+}
+input[type="number"] {
+  width: 3em;
+}
+
+/* ラジオボタン */
+.radio-label {
+  display: flex;
+  align-items: center;
+  float: left;
+  height: auto;
+  margin-right: 8px;
+  cursor: pointer;
+}
+input[type="radio"] {
+  position: relative;
+  margin-right: 4px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--lightgray-color);
+}
+input[type="radio"]::before {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  content: "";
+  display: none;
+  height: 8px;
+  width: 8px;
+  background-color: var(--gray-color);
+  border-radius: 50%;
+}
+input[type="radio"]:checked::before {
+  display: block;
+}
+input[type="radio"]:disabled {
+  background-color: #e0e0e0;
+}
+
+/* チェックボックス */
+input[type="checkbox"] {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  border: 2px solid var(--lightgray-color);
+}
+input[type="checkbox"]::before {
+  display: none;
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  content: "";
+  height: 12px;
+  width: 8px;
+  border-right: 2px solid var(--gray-color);
+  border-bottom: 3px solid var(--gray-color);
+  transform: rotate(35deg);
+}
+input[type="checkbox"]:checked::before {
+  display: block;
+}
+input[type="checkbox"]:disabled {
+  background-color: #e0e0e0;
+}
+
+/* セレクトボックス */
+/*
+  作り方
+  ラッパーつくる
+  クリック領域はselectで
+  装飾はラッパー
+  自作ボタンはselect要素を邪魔しないように後ろに
+*/
+select {
+  padding: 4px;
+  padding-right: 24px;
+  cursor: pointer;
+}
+.select-wrap {
+  display: inline-block;
+  position: relative;
+  border: solid 1px var(--lightgray-color);
+  border-radius: 4px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.select-wrap::after {
+  position: absolute;
+  top: 7px;
+  right: 6px;
+  content: "";
+  width: 12px;
+  height: 8px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--gray-color);
+  z-index: -1;
+}
+
+/* ----- table ----- */
+/* 共通 */
+table {
+  width: 100%;
+  margin: auto;
+}
+table, th, td {
+  border: solid 1px var(--lightgray-color);
+  vertical-align: middle;
+}
+th, td {
+  padding: 16px;
+}
+
+.announce {
+  color: var(--gray-color);
+  font-size: 1.1rem;
+}
+.danger {
+  color: var(--danger-color);
+  font-size: 1.4rem;
+}
+
+/* 基本のテーブル ユーザー情報など
+/* .common-table
+/*   table
+/*     tr
+/*       tr
+/*   btns
+/*     btn btn-secondory
+/*     btn btn-primary
+---------------------------------------- */
+.common-table {
+  margin-top: 16px;
+  max-width: 480px;
+}
+.common-table table, .common-table th, .common-table td {
+  border: none;
+}
+.common-table table {
+  border-top: solid 1px var(--main-color);
+}
+.common-table th, .common-table td {
+  border-bottom: solid 1px var(--main-color);
+}
+.common-table th {
+  width: 160px;
+  font-weight: normal;
+  text-align: left;
+}
+
+@media(max-width:480px) {
+  .common-table,
+  .common-table th,
+  .common-table td {
+    display: block;
+    width: 100%;
+  }
+  .common-table th {
+    border-bottom: none;
+    padding: 8px 16px 4px;
+  }
+  .common-table td {
+    padding: 4px 48px 8px;
+  }
+}
